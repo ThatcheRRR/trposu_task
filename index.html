@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link href = 'style.css' rel = 'stylesheet'>
+        <title>
+            PlaneSales
+        </title>
+    </head>
+    <body>
+        <div class = 'container'>
+        <header>
+            <h1>PlaneSales</h1>
+            <div class = 'current-user'>
+                Войти
+            </div>
+        </header>
+        <main>
+            <div class = 'auth__block'>
+                <div class = 'auth__block_userLogging'>
+                    <h2>
+                        Авторизация
+                    </h2>
+                    <div class = 'form'>
+                        <div class = 'loggingRow'>
+                            <label for = 'name'>Имя пользователя</label>
+                            <input type = 'text' id = 'name' name = 'userName' required maxlength="12">
+                        </div>
+                        <div class = 'loggingRow'>
+                            <label for = 'pass'>Пароль</label>
+                            <input type = 'password' id = 'pass' name = 'password' required>
+                        </div>
+                        <div class = 'loggingButton'>
+                            <button class = 'loginBut'>Войти</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class = 'buying'>
+                <div class = 'buying__form'>
+                    <div class = 'row'>
+                        <label for = "departurePlace">откуда</label>
+                        <input type = "text" name = "departurePlace" id = "departurePlace" value = "Минск" placeholder = "Откуда" required>
+                    </div>
+                    <div class = 'row'>
+                        <label for = "arrivalPlace">куда</label>
+                        <input type = "text" name = "arrivalPlace" id = "arrivalPlace" placeholder = "Куда" required>
+                    </div>
+                    <div class = 'row'>
+                        <label for = "departureDate">дата</label>
+                        <input type = "datetime-local" id = "departureDate" required>
+                    </div>
+                    <div class = 'button-block'>
+                        <button>Найти билеты</button>
+                    </div>
+                </div>
+            </section>
+            </div>
+            <section class = 'flight'>
+                <div class = 'flight__container tickets'>
+                    <h2>
+                        Все варианты по запросу 
+                    </h2>
+                    <div class = 'tickets__buy'>
+                        <div class = 'tickets__buy_block'>
+                            <div class = 'tickets__buy_block arrival'>
+                                <div class = 'arrival__city'>
+                                    Minsk
+                                </div>
+                                <div class = 'arrival__time'>
+                                    12:24
+                                </div>
+                            </div>
+                            <div class = 'tickets__buy_block overall-time'>
+                                <div class = 'overall-time__time'>
+                                    2:05
+                                </div>
+                                <div class = 'overall-time__descr'>
+                                    В пути
+                                </div>
+                            </div>
+                            <div class = 'tickets__buy_block departure'>
+                                <div class = 'departure__city'>
+                                    Grozniy
+                                </div>
+                                <div class = 'departure__time'>
+                                    14:29
+                                </div>
+                            </div>
+                        </div>
+                        <div class = 'tickets__buy_price'>
+                            205 BYN
+                        </div>
+                        <div class = 'tickets__buy_property info'>
+                            <div class = 'info__descr'>
+                                super reys stavlyu lukas
+                            </div>
+                            <div class = 'purchase'>
+                                <div class = 'purchase__amount'>
+                                    <div class = 'purchase__amount_label'>Количество билетов</div>
+                                    <div class = 'purchase__amount_minus'>-</div>
+                                    <div class = 'purchase__amount_current-amount'>1</div>
+                                    <div class = 'purchase__amount_plus'>+</div>
+                                </div>
+                                <div class = 'purchase__type'>
+                                    <input type='radio' id = 'econom'>
+                                    <label for = 'econom'>Эконом-класс</label>
+                                </div>
+                                <div class = 'purchase__type'>
+                                    <input type='radio' id = 'business'>
+                                    <label for = 'business'>Бизнесс-класс</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src = 'app.js'></script>
+    </body>
+</html>

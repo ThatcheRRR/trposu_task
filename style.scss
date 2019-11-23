@@ -1,0 +1,219 @@
+@import 'sass/_buttons.scss';
+@import 'sass/_typography.scss';
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    background: #2196f3;
+}
+
+main, header {
+    margin: 0 auto;
+    width: 1300px;
+}
+
+header {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    padding-left: 20px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.buying {
+    &__form {
+        margin-top: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        &:nth-child(4) {
+            width: 305px;
+        }
+    }
+
+    label {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .button-block {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        width: 100%;
+    }
+}
+
+.auth__block {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.75);
+    transition: 0.4s;
+    &_userLogging {
+        h2 {
+            margin-top: 30px;
+        }
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 20%;
+        border-radius: 20px;
+        background: #2196f3;
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .loggingRow {
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            label {
+                margin-left: 10px;
+                width: 241px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.flight {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    &__container {
+        height: 100%;
+        width: 1300px;
+        h2 {
+            margin-top: 50px;
+            margin-left: 10px;
+        }
+    }
+    .tickets__buy {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 2px solid #c4c4c4;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-top: 20px;
+        &_block {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 90%;
+            justify-content: space-between;
+        }
+        &_price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10%;
+        }
+        .arrival, .departure {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            &__city {
+                width: 100%;
+            }
+            &__time {
+                width: 100%;
+            }
+        }
+        .overall-time {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            &__time {
+                width: 100%;
+            }
+            &__descr {
+                width: 100%;
+            }
+        }
+    }
+    .purchase {
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        &__amount {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 30px;
+            &_label {
+                margin-right: 30px;
+            }
+            &_current-amount {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            &_minus, &_plus {
+                width: 20px;
+                height: 20px;
+                background: #2196f3;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    background: lighten(#2196f3, 10%);
+                }
+            }
+        }
+        &__type {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            width: 200px;
+            label {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+::-webkit-inner-spin-button { display: none; }

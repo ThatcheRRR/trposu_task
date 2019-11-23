@@ -1,0 +1,76 @@
+$font-color: #ffffff;
+
+@font-face {
+    font-family: "Rubik";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/assets/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Rubik-Light";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/assets/Rubik-Light.ttf") format("truetype");
+}
+
+%font {
+    font-family: "Rubik";
+    color: $font-color;
+}
+
+%font-light {
+    font-family: "Rubik-Light";
+    color: $font-color;
+}
+
+h1 {
+    @extend %font;
+    font-size: 2.25rem;
+    cursor: default;
+}
+
+.current-user, .about {
+    @extend %font;
+    font-size: 1.25rem;
+    color: #2196f3;
+}
+
+.about:hover, .current-user:hover {
+    color: $font-color;
+    border: 1px solid $font-color;
+    background: #2196f3;
+}
+
+label {
+    @extend %font-light;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+input {
+    @extend %font-light;
+    color: #000000;
+    font-size: 1.25rem;
+}
+
+input::-webkit-input-placeholder {
+    @extend %font-light;
+    color: #c4c4c4;
+    font-size: 1.25rem;
+}
+
+button {
+    @extend %font;
+    font-size: 1.5rem;
+}
+
+.auth__block_userLogging {
+    h2 {
+        @extend %font;
+        font-weight: normal;
+        color: $font-color;
+    }
+}
+
+:focus::-webkit-input-placeholder {opacity:0;}

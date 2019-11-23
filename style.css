@@ -1,0 +1,450 @@
+.button-block button {
+  height: 60px;
+  background: #f57c00;
+  border: none;
+  border-radius: 10px;
+}
+
+.button-block button:hover {
+  background: #ff9529;
+  cursor: pointer;
+}
+
+.current-user, .about {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 40px;
+  width: 150px;
+  border-radius: 40px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.loggingButton {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 150px;
+}
+
+.loggingButton button {
+  height: 60px;
+  background: #f57c00;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.loggingButton button:hover {
+  background: #ff9529;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/assets/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Light";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/assets/Rubik-Light.ttf") format("truetype");
+}
+
+h1, .current-user, .about, button, .auth__block_userLogging h2 {
+  font-family: "Rubik";
+  color: #ffffff;
+}
+
+label, input, input::-webkit-input-placeholder {
+  font-family: "Rubik-Light";
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.25rem;
+  cursor: default;
+}
+
+.current-user, .about {
+  font-size: 1.25rem;
+  color: #2196f3;
+}
+
+.about:hover, .current-user:hover {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  background: #2196f3;
+}
+
+label {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+input {
+  color: #000000;
+  font-size: 1.25rem;
+}
+
+input::-webkit-input-placeholder {
+  color: #c4c4c4;
+  font-size: 1.25rem;
+}
+
+button {
+  font-size: 1.5rem;
+}
+
+.auth__block_userLogging h2 {
+  font-weight: normal;
+  color: #ffffff;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+html {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  background: #2196f3;
+}
+
+main, header {
+  margin: 0 auto;
+  width: 1300px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input {
+  padding-left: 20px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.buying__form {
+  margin-top: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buying .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.buying .row:nth-child(4) {
+  width: 305px;
+}
+
+.buying label {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.buying button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.buying .button-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.auth__block {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.auth__block_userLogging {
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 20%;
+  border-radius: 20px;
+  background: #2196f3;
+}
+
+.auth__block_userLogging h2 {
+  margin-top: 30px;
+}
+
+.auth__block_userLogging .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth__block_userLogging .loggingRow {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.auth__block_userLogging .loggingRow label {
+  margin-left: 10px;
+  width: 241px;
+  margin-bottom: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flight {
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flight__container {
+  height: 100%;
+  width: 1300px;
+}
+
+.flight__container h2 {
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.flight .tickets__buy {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 2px solid #c4c4c4;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.flight .tickets__buy_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flight .tickets__buy_price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10%;
+}
+
+.flight .tickets__buy .arrival, .flight .tickets__buy .departure {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flight .tickets__buy .arrival__city, .flight .tickets__buy .departure__city {
+  width: 100%;
+}
+
+.flight .tickets__buy .arrival__time, .flight .tickets__buy .departure__time {
+  width: 100%;
+}
+
+.flight .tickets__buy .overall-time {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flight .tickets__buy .overall-time__time {
+  width: 100%;
+}
+
+.flight .tickets__buy .overall-time__descr {
+  width: 100%;
+}
+
+.flight .purchase {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flight .purchase__amount {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+}
+
+.flight .purchase__amount_label {
+  margin-right: 30px;
+}
+
+.flight .purchase__amount_current-amount {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.flight .purchase__amount_minus, .flight .purchase__amount_plus {
+  width: 20px;
+  height: 20px;
+  background: #2196f3;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.flight .purchase__amount_minus:hover, .flight .purchase__amount_plus:hover {
+  background: #51adf6;
+}
+
+.flight .purchase__type {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+}
+
+.flight .purchase__type label {
+  margin-left: 10px;
+}
+
+::-webkit-inner-spin-button {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

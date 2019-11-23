@@ -1,0 +1,42 @@
+.button-block {
+        button {
+        height: 60px;
+        background: #f57c00;
+        border: none;
+        border-radius: 10px;
+        &:hover {
+            background: lighten(#f57c00, 10%);
+            cursor: pointer;
+        }
+    }
+}
+
+.current-user, .about {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 40px;
+    width: 150px;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.loggingButton {
+    margin-bottom: 20px;;
+    display: flex;
+    width: 150px;
+    button {
+        height: 60px;
+        background: #f57c00;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        &:hover {
+            background: lighten(#f57c00, 10%);
+            cursor: pointer;
+        }
+    }
+}
