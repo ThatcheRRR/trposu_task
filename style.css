@@ -437,6 +437,11 @@ input {
   margin-left: 10px;
 }
 
+.flight .tickets h3 {
+  margin-left: 10px;
+  margin-top: 40px;
+}
+
 .flight .tickets__buy {
   padding: 25px;
   margin-top: 40px;
@@ -479,24 +484,6 @@ input {
   width: 13%;
 }
 
-.flight .tickets__buy .departure, .flight .tickets__buy .arrival {
-  width: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.flight .tickets__buy .departure__city, .flight .tickets__buy .arrival__city {
-  padding-left: 5px;
-  width: 100%;
-}
-
-.flight .tickets__buy .departure__time, .flight .tickets__buy .arrival__time {
-  width: 100%;
-}
-
 .flight .tickets__buy_button {
   width: 7%;
   display: -webkit-box;
@@ -508,34 +495,6 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.flight .tickets__buy .overall-time {
-  height: 61px;
-  width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.flight .tickets__buy .overall-time .travel-time {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.flight .tickets__buy .overall-time .departure-plane {
-  -webkit-transform: rotate(-25deg);
-          transform: rotate(-25deg);
-}
-
-.flight .tickets__buy .overall-time .arrival-plane {
-  -webkit-transform: rotate(25deg);
-          transform: rotate(25deg);
 }
 
 .flight .tickets__buy_property {
@@ -551,6 +510,65 @@ input {
           justify-content: space-between;
   margin-top: 25px;
   width: 100%;
+}
+
+.flight .tickets__arrived_block {
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.flight .departure, .flight .arrival {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flight .departure__city, .flight .arrival__city {
+  padding-left: 5px;
+  width: 100%;
+}
+
+.flight .departure__time, .flight .arrival__time {
+  width: 100%;
+}
+
+.flight .overall-time {
+  height: 61px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flight .overall-time .travel-time {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.flight .overall-time .departure-plane {
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.flight .overall-time .arrival-plane {
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
 }
 
 .flight .purchase {
@@ -692,9 +710,12 @@ footer div:last-child {
   margin-right: 25px;
 }
 
-.arrived {
-  height: 100%;
-  width: 100%;
+.arrived__container .tickets__buy {
+  background: #dedede;
+}
+
+.arrived__container .tickets__buy_price {
+  background: #c26200;
 }
 
 ::-webkit-inner-spin-button {
