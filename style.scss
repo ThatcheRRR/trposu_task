@@ -6,6 +6,7 @@ html {
 }
 
 * {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
@@ -15,7 +16,7 @@ body {
     background: #2196f3;
 }
 
-main, header {
+main, header, footer {
     margin: 0 auto;
     width: 1300px;
 }
@@ -57,7 +58,7 @@ input {
         width: 100%;
     }
     
-    button {
+    .button {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -114,63 +115,85 @@ input {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .flight {
-    background: #fff;
     display: flex;
+    flex-wrap: wrap;
+    background: #fff;
     justify-content: center;
     &__container {
         height: 100%;
         width: 1300px;
         h2 {
-            margin-top: 50px;
+            margin-top: 40px;
             margin-left: 10px;
         }
     }
     .tickets__buy {
-        margin-top: 30px;
+        padding: 25px;
+        margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
-        border: 2px solid #c4c4c4;
-        border-radius: 20px;
-        padding-left: 20px;
-        padding-top: 20px;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+        transition: 0.4s;
         &_block {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            width: 90%;
+            width: 80%;
             justify-content: space-between;
         }
         &_price {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 10%;
+            width: 13%;
         }
-        .arrival, .departure {
+        .departure, .arrival {
             width: 200px;
             display: flex;
             flex-wrap: wrap;
             &__city {
+                padding-left: 5px;
                 width: 100%;
             }
             &__time {
                 width: 100%;
             }
         }
-        .overall-time {
-            width: 200px;
+        &_button {
+            width: 7%;
             display: flex;
-            flex-wrap: wrap;
-            &__time {
-                width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .overall-time {
+            height: 61px;
+            width: 300px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            .travel-time {
+                margin-left: 40px;
+                margin-right: 40px;
             }
-            &__descr {
-                width: 100%;
+            .departure-plane {
+                transform: rotate(-25deg);
             }
+            .arrival-plane {
+                transform: rotate(25deg);
+            }
+        }
+        &_property {
+            padding-left: 50px;
+            padding-right: 70px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-top: 25px;
+            width: 100%;
         }
     }
     .purchase {
@@ -204,16 +227,65 @@ input {
             }
         }
         &__type {
+            margin-top: 20px;
             width: 100%;
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
-            width: 200px;
+            margin-left: 20px;
             label {
                 margin-left: 10px;
             }
         }
     }
+}
+
+.availableSeats {
+    width: 270px;
+    &__header {
+        margin-bottom: 20px;
+    }
+    &__classes {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 20px;
+        flex-wrap: wrap;
+        &_econom, &_business {
+            display: flex;
+            justify-content: space-between;
+            width: 170px;
+        }
+        &_econom {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.buy__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer {
+    div:first-child() {
+        margin-left: 25px;
+    }
+    div:last-child() {
+        margin-right: 25px;
+    }
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2196f3;
+}
+
+.arrived {
+    height: 100%;
+    width: 100%;
 }
 
 ::-webkit-inner-spin-button { display: none; }

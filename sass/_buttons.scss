@@ -1,5 +1,8 @@
 .button-block {
-        button {
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 60px;
         background: #f57c00;
         border: none;
@@ -10,6 +13,7 @@
         }
     }
 }
+
 
 .current-user, .about {
     box-sizing: border-box;
@@ -37,6 +41,60 @@
         &:hover {
             background: lighten(#f57c00, 10%);
             cursor: pointer;
+        }
+    }
+}
+
+.tickets__buy {
+    &_button {
+        svg {
+            transition: 300ms;
+            cursor: pointer;
+        }
+    }
+    &_price {
+        height: 60px;
+        background: #f57c00;
+        border-radius: 10px;
+        &:hover {
+            background: lighten(#f57c00, 10%);
+            cursor: pointer;
+        }  
+    }
+}
+
+input[type='radio'] {
+    appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid #a0b0b9;
+    }
+    &:checked {
+        &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #2196f3;
+        transform: translate(-50%, -50%);
+        visibility: visible;
+        }
+        &::before {
+            border: 1px solid #2196f3; 
         }
     }
 }

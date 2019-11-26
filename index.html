@@ -51,64 +51,90 @@
                         <input type = "datetime-local" id = "departureDate" required>
                     </div>
                     <div class = 'button-block'>
-                        <button>Найти билеты</button>
+                        <a class = 'button' href = '#fly'>Найти билеты</a>
                     </div>
                 </div>
             </section>
             </div>
-            <section class = 'flight'>
+            <section class = 'flight' id = 'fly'>
                 <div class = 'flight__container tickets'>
                     <h2>
-                        Все варианты по запросу 
+                        Все варианты по Вашему запросу
                     </h2>
                     <div class = 'tickets__buy'>
-                        <div class = 'tickets__buy_block'>
-                            <div class = 'tickets__buy_block arrival'>
-                                <div class = 'arrival__city'>
-                                    Minsk
+                        <div class = 'buy__container'>
+                            <div class = 'tickets__buy_block'>
+                                <div class = 'tickets__buy_block arrival'>
+                                    <div class = 'arrival__time'>
+                                        12:24
+                                    </div>
+                                    <div class = 'arrival__city'>
+                                        Minsk
+                                    </div>
                                 </div>
-                                <div class = 'arrival__time'>
-                                    12:24
+                                <div class = 'tickets__buy_block overall-time'>
+                                    <div class = 'arrival-plane'>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#A0B0B9" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M17 13H14C12.4577 11.5739 10.1159 9.82474 8.16374 8.01001L6.84295 8C7.60515 9.49106 8.69945 11.4376 9.5 13H6.5C5.54148 12.2794 4.45139 11.6727 3.69008 11.1028C3.27567 10.7932 2.80644 11.0649 3.08297 11.6043C4.38443 14.1509 4.90267 15.176 4.90267 15.176C5.12943 15.6181 5.48619 15.9964 6 16H19.7317C20.7473 15.9659 20.9885 15.3663 21 14.7944C21 13.5 19.5675 13.0196 17 13Z"></path> </svg>
+                                    </div>
+                                    <span class = 'travel-time'>
+                                        В пути: 2ч 05м
+                                    </span>
+                                    <div class = 'departure-plane'>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#A0B0B9" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M17 13H14C12.4577 11.5739 10.1159 9.82474 8.16374 8.01001L6.84295 8C7.60515 9.49106 8.69945 11.4376 9.5 13H6.5C5.54148 12.2794 4.45139 11.6727 3.69008 11.1028C3.27567 10.7932 2.80644 11.0649 3.08297 11.6043C4.38443 14.1509 4.90267 15.176 4.90267 15.176C5.12943 15.6181 5.48619 15.9964 6 16H19.7317C20.7473 15.9659 20.9885 15.3663 21 14.7944C21 13.5 19.5675 13.0196 17 13Z"></path> </svg>
+                                    </div>
+                                </div>
+                                <div class = 'tickets__buy_block departure'>
+                                    <div class = 'departure__time'>
+                                        14:29
+                                    </div>
+                                    <div class = 'departure__city'>
+                                        Grozniy
+                                    </div>
                                 </div>
                             </div>
-                            <div class = 'tickets__buy_block overall-time'>
-                                <div class = 'overall-time__time'>
-                                    2:05
-                                </div>
-                                <div class = 'overall-time__descr'>
-                                    В пути
-                                </div>
+                            <div class = 'tickets__buy_price'>
+                                Забронировать
                             </div>
-                            <div class = 'tickets__buy_block departure'>
-                                <div class = 'departure__city'>
-                                    Grozniy
-                                </div>
-                                <div class = 'departure__time'>
-                                    14:29
-                                </div>
+                            <div class = 'tickets__buy_button'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
                             </div>
                         </div>
-                        <div class = 'tickets__buy_price'>
-                            205 BYN
-                        </div>
-                        <div class = 'tickets__buy_property info'>
-                            <div class = 'info__descr'>
-                                super reys stavlyu lukas
-                            </div>
-                            <div class = 'purchase'>
+                        <div class = 'tickets__buy_property'>
+                            <div class = 'tickets__buy_property_info purchase'>
                                 <div class = 'purchase__amount'>
                                     <div class = 'purchase__amount_label'>Количество билетов</div>
-                                    <div class = 'purchase__amount_minus'>-</div>
+                                    <div class = 'purchase__amount_minus'>
+                                        <svg width="8" height="2" viewBox="0 0 8 2" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h8v2H0z" fill="#FFF" fill-rule="evenodd"></path></svg>
+                                    </div>
                                     <div class = 'purchase__amount_current-amount'>1</div>
-                                    <div class = 'purchase__amount_plus'>+</div>
+                                    <div class = 'purchase__amount_plus'>
+                                        <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><path d="M5 3h3v2H5v3H3V5H0V3h3V0h2v3z" fill="#FFF" fill-rule="evenodd"></path></svg>
+                                    </div>
                                 </div>
                                 <div class = 'purchase__type'>
-                                    <input type='radio' id = 'econom'>
-                                    <label for = 'econom'>Эконом-класс</label>
+                                    <input type = 'radio' id = 'econom' name = 'ticket-class'>
+                                    <label for = 'econom'>Эконом</label>
                                 </div>
                                 <div class = 'purchase__type'>
-                                    <input type='radio' id = 'business'>
-                                    <label for = 'business'>Бизнесс-класс</label>
+                                    <input type = 'radio' id = 'business' name = 'ticket-class'>
+                                    <label for = 'business'>Бизнес</label>
+                                </div>
+                            </div>
+                            <div class = 'tickets__buy_property_amount availableSeats'>
+                                <p class = 'availableSeats__header'>Количество свободных мест</p>
+                                <div class = 'availableSeats__classes'>
+                                    <div class = 'availableSeats__classes_econom'>
+                                        Эконом
+                                        <span>
+                                            50
+                                        </span>
+                                    </div>
+                                    <div class = 'availableSeats__classes_business'>
+                                        Бизнес
+                                        <span>
+                                            10
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -116,6 +142,12 @@
                 </div>
             </section>
         </main>
+        <footer>
+            <div>
+                © <span>Pavel Osipau</span> <span>2019</span>
+            </div>
+            <div>PlaneSales Inc.</div>
+        </footer>
         <script src = 'app.js'></script>
     </body>
 </html>

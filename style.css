@@ -1,11 +1,20 @@
-.button-block button {
+.button-block .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 60px;
   background: #f57c00;
   border: none;
   border-radius: 10px;
 }
 
-.button-block button:hover {
+.button-block .button:hover {
   background: #ff9529;
   cursor: pointer;
 }
@@ -52,6 +61,68 @@
   cursor: pointer;
 }
 
+.tickets__buy_button svg {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.tickets__buy_price {
+  height: 60px;
+  background: #f57c00;
+  border-radius: 10px;
+}
+
+.tickets__buy_price:hover {
+  background: #ff9529;
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  height: 15px;
+  width: 15px;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #a0b0b9;
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2196f3;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  visibility: visible;
+}
+
+input[type='radio']:checked::before {
+  border: 1px solid #2196f3;
+}
+
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: "Rubik";
   font-weight: normal;
@@ -66,7 +137,7 @@
   src: url("/assets/Rubik-Light.ttf") format("truetype");
 }
 
-h1, .current-user, .about, button, .auth__block_userLogging h2 {
+h1, .current-user, .about, .button, button, .auth__block_userLogging h2 {
   font-family: "Rubik";
   color: #ffffff;
 }
@@ -107,12 +178,73 @@ input::-webkit-input-placeholder {
   font-size: 1.25rem;
 }
 
-button {
+.button, button {
   font-size: 1.5rem;
 }
 
 .auth__block_userLogging h2 {
   font-weight: normal;
+  color: #ffffff;
+}
+
+.flight {
+  font-family: 'Open Sans';
+}
+
+.tickets__buy_block {
+  font-family: 'Open Sans';
+}
+
+.tickets__buy_block .arrival__time, .tickets__buy_block .departure__time {
+  font-size: 2rem;
+  color: #4a4a4a;
+}
+
+.tickets__buy_block .arrival__city, .tickets__buy_block .departure__city {
+  font-size: 0.8rem;
+  color: #a0b0b9;
+}
+
+.tickets__buy_block .overall-time {
+  font-size: 0.8rem;
+  color: #a0b0b9;
+}
+
+.tickets__buy_price {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.purchase__amount_label {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+}
+
+.purchase__amount_current-amount::-moz-selection {
+  background: #fff;
+}
+
+.purchase__amount_current-amount::selection {
+  background: #fff;
+}
+
+.purchase__type label {
+  font-family: 'Open Sans';
+  color: #4a4a4a;
+  text-transform: capitalize;
+}
+
+.availableSeats {
+  font-family: 'Open Sans';
+  color: #4a4a4a;
+}
+
+.availableSeats__header {
+  font-size: 1.2rem;
+}
+
+footer {
+  font-family: "Rubik";
   color: #ffffff;
 }
 
@@ -125,6 +257,7 @@ html {
 }
 
 * {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
 }
@@ -134,7 +267,7 @@ body {
   background: #2196f3;
 }
 
-main, header {
+main, header, footer {
   margin: 0 auto;
   width: 1300px;
 }
@@ -190,7 +323,7 @@ input {
   width: 100%;
 }
 
-.buying button {
+.buying .button {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -279,14 +412,16 @@ input {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .flight {
-  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #fff;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -298,21 +433,22 @@ input {
 }
 
 .flight__container h2 {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-left: 10px;
 }
 
 .flight .tickets__buy {
-  margin-top: 30px;
+  padding: 25px;
+  margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  border: 2px solid #c4c4c4;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
+  -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .flight .tickets__buy_block {
@@ -324,7 +460,7 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 90%;
+  width: 80%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -340,10 +476,10 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 10%;
+  width: 13%;
 }
 
-.flight .tickets__buy .arrival, .flight .tickets__buy .departure {
+.flight .tickets__buy .departure, .flight .tickets__buy .arrival {
   width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -352,28 +488,68 @@ input {
       flex-wrap: wrap;
 }
 
-.flight .tickets__buy .arrival__city, .flight .tickets__buy .departure__city {
+.flight .tickets__buy .departure__city, .flight .tickets__buy .arrival__city {
+  padding-left: 5px;
   width: 100%;
 }
 
-.flight .tickets__buy .arrival__time, .flight .tickets__buy .departure__time {
+.flight .tickets__buy .departure__time, .flight .tickets__buy .arrival__time {
   width: 100%;
+}
+
+.flight .tickets__buy_button {
+  width: 7%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .flight .tickets__buy .overall-time {
-  width: 200px;
+  height: 61px;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.flight .tickets__buy .overall-time__time {
-  width: 100%;
+.flight .tickets__buy .overall-time .travel-time {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
-.flight .tickets__buy .overall-time__descr {
+.flight .tickets__buy .overall-time .departure-plane {
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.flight .tickets__buy .overall-time .arrival-plane {
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+}
+
+.flight .tickets__buy_property {
+  padding-left: 50px;
+  padding-right: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 25px;
   width: 100%;
 }
 
@@ -428,6 +604,7 @@ input {
 }
 
 .flight .purchase__type {
+  margin-top: 20px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,11 +614,87 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
+  margin-left: 20px;
 }
 
 .flight .purchase__type label {
   margin-left: 10px;
+}
+
+.availableSeats {
+  width: 270px;
+}
+
+.availableSeats__header {
+  margin-bottom: 20px;
+}
+
+.availableSeats__classes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.availableSeats__classes_econom, .availableSeats__classes_business {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 170px;
+}
+
+.availableSeats__classes_econom {
+  margin-bottom: 20px;
+}
+
+.buy__container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #2196f3;
+}
+
+footer div:first-child {
+  margin-left: 25px;
+}
+
+footer div:last-child {
+  margin-right: 25px;
+}
+
+.arrived {
+  height: 100%;
+  width: 100%;
 }
 
 ::-webkit-inner-spin-button {

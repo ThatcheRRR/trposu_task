@@ -1,4 +1,10 @@
 $font-color: #ffffff;
+$time-color: #4a4a4a;
+$descr-color: #a0b0b9;
+
+a {
+    text-decoration: none;
+}
 
 @font-face {
     font-family: "Rubik";
@@ -60,7 +66,7 @@ input::-webkit-input-placeholder {
     font-size: 1.25rem;
 }
 
-button {
+.button, button {
     @extend %font;
     font-size: 1.5rem;
 }
@@ -71,6 +77,66 @@ button {
         font-weight: normal;
         color: $font-color;
     }
+}
+
+.flight {
+    font-family: 'Open Sans';
+}
+
+.tickets__buy {
+    &_block {
+        font-family: 'Open Sans';
+        .arrival, .departure {
+            &__time {
+                font-size: 2rem;
+                color: $time-color;
+            }
+            &__city {
+                font-size: 0.8rem;
+                color: $descr-color;
+            }
+        }
+        .overall-time {
+            font-size: 0.8rem;
+            color: $descr-color; 
+        }
+    }
+    &_price {
+        color: $font-color;
+        font-size: 1rem;
+    }
+}
+
+.purchase {
+    &__amount {
+        &_label {
+            font-size: 1.2rem;
+            color: $time-color;
+        }
+        &_current-amount::selection {
+            background: #fff;
+        }
+    }
+    &__type {
+        label {
+            font-family: 'Open Sans';
+            color: $time-color;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.availableSeats {
+    font-family: 'Open Sans';
+    color: $time-color;
+    &__header {
+        font-size: 1.2rem;
+    }
+}
+
+footer {
+    font-family: "Rubik";
+    color: $font-color;
 }
 
 :focus::-webkit-input-placeholder {opacity:0;}
