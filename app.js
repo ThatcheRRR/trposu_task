@@ -24,11 +24,19 @@ class Flight {
     }
 
     buying() {
+        if (seatPicker === 'econom') {
 
+        } else if (seatPicker === 'business') {
+
+        }
     }
 
     refund() {
+        if (seatPicker === 'econom') {
 
+        } else if (seatPicker === 'business') {
+
+        }
     }
 
 
@@ -61,6 +69,7 @@ const findTickets = document.querySelector('.button-block');
 const departurePlace = document.querySelector('#departurePlace');
 const arrivalPlace = document.querySelector('#arrivalPlace');
 const footer = document.querySelector('footer');
+const logs = document.querySelector('.logs');
 const enterCode = 13;
 const user = {};
 const travel = {};
@@ -74,24 +83,26 @@ const travelArr = [
 dateField.min = currentDate;
 dateField.value = currentDate;
 
-let userName = '';
-let property = '';
-let seatPicker = '';
-let addTicket = '';
-let removeTicket = '';
-let showButton = '';
-let buySeats = '';
-let departureCity = '';
-let arrivalCity = '';
-let purchase = '';
-let buyTicket = '';
-let notAvailable = '';
-let available = '';
-let economAll = '';
-let businessAll = '';
-let section = '';
-let economButton = '';
-let businessButton = '';
+let userName;
+let property;
+let seatPicker;
+let addTicket;
+let removeTicket;
+let showButton;
+let buySeats;
+let departureCity;
+let arrivalCity;
+let purchase;
+let buyTicket;
+let notAvailable;
+let available;
+let economAll;
+let businessAll;
+let section;
+let economButton;
+let businessButton;
+let password;
+let client;
 
 flight.style.height = `${document.body.offsetHeight}px`;
 
@@ -123,9 +134,12 @@ authBlock.addEventListener('keydown', loggedIn);
 
 loginButton.addEventListener('click', () => {
     userName = document.querySelector('#name').value.toLowerCase();
+    password = document.querySelector('#pass').value;
     authBlock.style.opacity = '0';
     setTimeout(hide, 300);
     cabinet.innerText = userName[0].toUpperCase() + userName.substring(1).toLowerCase();
+    user.name = cabinet.innerText;
+    user.id = password;
 });
 
 findTickets.addEventListener('click', () => {
@@ -136,13 +150,8 @@ findTickets.addEventListener('click', () => {
     let departure_city = departurePlace.value.toLowerCase();
     if (available.innerText === 'Доступные рейсы' && notAvailable.innerText === '') {
         for (let i = 0; i < travelArr.length; i++) {
-            let flightMinutes = '';
-            let flightHours = `${travelArr[i].arrivalTime.slice(0, 2) - travelArr[i].departureTime.slice(0, 2)}ч`;
-            if (travelArr[i].arrivalTime.slice(3, 5) > travelArr[i].departureTime.slice(3, 5)) {
-                flightMinutes = `${travelArr[i].arrivalTime.slice(3, 5) - travelArr[i].departureTime.slice(3, 5)}м`;
-            } else {
-                flightMinutes = `${travelArr[i].departureTime.slice(3, 5) - travelArr[i].arrivalTime.slice(3, 5)}м`;
-            }
+            let flightHours = `${Math.abs(travelArr[i].arrivalTime.slice(0, 2) - travelArr[i].departureTime.slice(0, 2))}ч`;
+            let flightMinutes = `${Math.abs(travelArr[i].departureTime.slice(3, 5) - travelArr[i].arrivalTime.slice(3, 5))}м`;
             travelArr[i].arrivalCity = arrival_city[0].toUpperCase() + arrival_city.substring(1).toLowerCase();
             travelArr[i].departureCity = departure_city[0].toUpperCase() + departure_city.substring(1).toLowerCase();
             section = `<div class = 'tickets__buy'>
@@ -196,12 +205,12 @@ findTickets.addEventListener('click', () => {
                             </div>
                         </div>
                         <div class = 'purchase__type'>
-                            <input type = 'radio' id = 'econom' name = 'ticket-class'>
-                            <label for = 'econom' class = 'econom'>Эконом</label>
+                            <input type = 'radio' id = 'econom${i}' name = 'ticket-class'>
+                            <label for = 'econom${i}' class = 'econom'>Эконом</label>
                         </div>
                         <div class = 'purchase__type'>
-                            <input type = 'radio' id = 'business' name = 'ticket-class'>
-                            <label for = 'business' class = 'business'>Бизнес</label>
+                            <input type = 'radio' id = 'business${i}' name = 'ticket-class'>
+                            <label for = 'business${i}' class = 'business'>Бизнес</label>
                         </div>
                     </div>
                     <div class = 'tickets__buy_property_amount availableSeats'>
@@ -259,15 +268,13 @@ findTickets.addEventListener('click', () => {
             property[i].classList.toggle('hidden');
         });
     }
-    
     footer.classList.remove('hidden');
-    for (let i = 0; i < purchase.length; i++) {
-        purchase[i].children[1].addEventListener('click', (e) => {
-            if (e.currentTarget.innerText === 'Эконом') {
-                seatPicker = 'econom';
-            } else if (e.currentTarget.innerText === 'Бизнес') {
-                seatPicker = 'business';
-            }
+    for (let i = 0; i < economButton.length; i++) {
+        economButton[i].addEventListener('click', () => {
+            seatPicker = 'econom';
+        });
+        businessButton[i].addEventListener('click', () => {
+            seatPicker = 'business';
         });
     }
     for (let i = 0; i < addTicket.length; i++) {
@@ -287,4 +294,14 @@ findTickets.addEventListener('click', () => {
             }
         }
     }
+    buyTicket[2].addEventListener('click', () => {
+        console.log(buyTicket[2].parentElement);
+    });
+    client = new User(user);
 });
+
+window.onbeforeunload = () => {
+    localStorage.setItem(user.name, JSON.stringify(user));
+    let log = `<div>${localStorage.getItem(user.name)}</div>`;
+    logs.insertAdjacentElement('beforeend', log);
+}
