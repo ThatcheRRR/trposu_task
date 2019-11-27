@@ -71,6 +71,7 @@ const arrivalPlace = document.querySelector('#arrivalPlace');
 const footer = document.querySelector('footer');
 const logs = document.querySelector('.logs');
 const enterCode = 13;
+const buyForm = document.querySelector('.buy-form');
 const user = {};
 const travel = {};
 const currentTime = currentDate.slice(-5);
@@ -119,6 +120,7 @@ cabinet.addEventListener('click', () => {
 
 function hide() {
     authBlock.style.display = 'none';
+    buyForm.style.display = 'none';
 }
 
 function loggedIn(e) {
@@ -185,7 +187,7 @@ findTickets.addEventListener('click', () => {
                             </div>
                         </div>
                     </div>
-                    <div class = 'tickets__buy_price'>
+                    <div class = 'tickets__buy_price bron${i}'>
                         Забронировать
                     </div>
                     <div class = 'tickets__buy_button'>
@@ -239,6 +241,7 @@ findTickets.addEventListener('click', () => {
             }
         }
     }
+    buyTicket = document.querySelectorAll('.tickets__buy_price');
     economButton = document.querySelectorAll('.econom');
     businessButton = document.querySelectorAll('.business');
     property = document.querySelectorAll('.tickets__buy_property');
@@ -251,7 +254,6 @@ findTickets.addEventListener('click', () => {
     departureCity = document.querySelectorAll('.departure__city');
     arrivalCity = document.querySelectorAll('.arrival__city');
     purchase = document.querySelectorAll('.purchase__type');
-    buyTicket = document.querySelectorAll('.tickets__buy_price');
     for (let i = 0; i < arrivalCity.length; i++) {
         arrivalCity[i].innerText = arrival_city[0].toUpperCase() + arrival_city.substring(1).toLowerCase();
         departureCity[i].innerText = departure_city[0].toUpperCase() + departure_city.substring(1).toLowerCase();
@@ -294,14 +296,6 @@ findTickets.addEventListener('click', () => {
             }
         }
     }
-    buyTicket[2].addEventListener('click', () => {
-        console.log(buyTicket[2].parentElement);
-    });
-    client = new User(user);
+    for (let i = 0; i < buyTicket.length; i++) {
+    }
 });
-
-window.onbeforeunload = () => {
-    localStorage.setItem(user.name, JSON.stringify(user));
-    let log = `<div>${localStorage.getItem(user.name)}</div>`;
-    logs.insertAdjacentElement('beforeend', log);
-}
